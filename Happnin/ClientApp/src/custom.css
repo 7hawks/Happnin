@@ -103,6 +103,7 @@ code {
 }
 .card
 {
+  margin: 50px;
   border-radius: 20px;
   width: 50rem;
 }

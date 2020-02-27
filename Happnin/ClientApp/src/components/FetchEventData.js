@@ -15,43 +15,9 @@ export class FetchEventData extends Component {
 
     static renderEventsTable(events) {
         return (
-
             <div>
                  {events.map(eventinfo => <HappninEvent key={eventinfo.id}{...eventinfo}/>)}
             </div>
-
-
-
-        // <table className='table table-striped' aria-labelledby="tabelLabel">
-        //         <thead>
-        //             <tr>
-        //                 <th>Title</th>
-        //                 <th>Description</th>
-        //                 <th>LocationId</th>
-        //                 <th>CategoryId</th>
-        //                 <th>HostId</th>
-        //                 <th>Start Time</th>
-        //                 <th>End Time</th>
-        //                 <th>Cost</th>
-        //                 <th>Age Restriction</th>
-        //             </tr>
-        //         </thead>
-        //         <tbody>
-        //             {events.map(u =>
-        //                 <tr key={u.name}>
-        //                     <td>{u.name}</td>
-        //                     <td>{u.description}</td>
-        //                     <td>{u.locationId}</td>
-        //                     <td>{u.categoryId}</td>
-        //                     <td>{u.hostId}</td>
-        //                     <td>{u.eventTime}</td>
-        //                     <td>{u.endTime}</td>
-        //                     <td>{u.cost}</td>
-        //                     <td>{u.ageRestriction}</td>
-        //                 </tr>
-        //             )}
-        //         </tbody>
-        //     </table>
         );
     }
 

@@ -34,8 +34,8 @@ export class SubmitEvent extends Component {
         eventTime: "2020-02-26T05:21:52.102Z",
         endTime: "2020-02-27T05:21:52.102Z",
         cost: 42.00,
-        ageRestriction: 0,
-        redirectToHome: false
+        ageRestriction: 1
+       // redirectToHome: false
       }
     };
   
@@ -44,7 +44,6 @@ export class SubmitEvent extends Component {
   }
 
   async handleSubmit(event) {
-
     event.preventDefault();
     console.log(JSON.stringify(this.state.event));
     await fetch("event", {
@@ -55,7 +54,7 @@ export class SubmitEvent extends Component {
       .then(res => res.json())
       .then(response => console.log("Success: ", JSON.stringify(response)))
           .then(error => console.error("error:", error));
-       this.setState({redirectToHome: true}) 
+     //  this.setState({redirectToHome: true}) 
 
   };
 
@@ -79,10 +78,10 @@ export class SubmitEvent extends Component {
 
   render() {
 
-    const redirectToHome = this.state.redirectToHome;
-    if (redirectToHome === true) {
-      return <Redirect to="/fetch-event-data" />
-  }
+  //   const redirectToHome = this.state.redirectToHome;
+  //   if (redirectToHome === true) {
+  //     return <Redirect to="/fetch-event-data" />
+  // }
 
     return (
       <div class="submit" > 

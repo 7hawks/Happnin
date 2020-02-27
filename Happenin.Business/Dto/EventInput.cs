@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Happnin.Business.Dto
 {
@@ -9,6 +10,7 @@ namespace Happnin.Business.Dto
         public int LocationId { get; set; }
         public int CategoryId { get; set; }
         public int HostId { get; set; }
+        [DataType(DataType.Time)]
         public DateTime EventTime { get; set; }
         public DateTime EndTime { get; set; }
         public double Cost { get; set; }

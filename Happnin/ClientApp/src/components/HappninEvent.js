@@ -9,8 +9,7 @@ export class HappninEvent extends React.Component {
     render() {
         const e = this.props;
         return (
-            <Card>
-            <div class="card" >
+            <Card class="card" >
                 <Container>
                     <Row around="xs">
                     <Col xs={2} >
@@ -34,8 +33,7 @@ export class HappninEvent extends React.Component {
                     </Col>
                     </Row>
                 </Container>
-            </div>
             </Card>
-                )
+            )
     }
 }

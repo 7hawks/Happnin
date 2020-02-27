@@ -14,7 +14,6 @@ import { UserCreation } from './components/UserCreation';
 import { SubmitEvent } from './components/SubmitEvent';
 import { browseEvents } from './components/browseEvents';
 import { signIn } from './components/sign-in';
-import { EditAccount } from './components/EditAccount';
 import { forgotPassword } from './components/forgotPassword';
 import './custom.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -28,8 +27,9 @@ export default class App extends Component {
     eventinfoarray: [],
   }
 
+
   render () {
-    return ( 
+    return (
       <Layout>
         <Route exact path='/' component={Home} />
         <Route path='/counter' component={Counter} />
@@ -42,8 +42,7 @@ export default class App extends Component {
         <Route path='/fetch-user-data' component={FetchUserData}/>
         <Route path='/fetch-location-data' component={FetchLocationData}/>
         <Route path='/sign-in' component={signIn}/>
-        <Route path='/forgotPassword' component={forgotPassword} />
-        <Route path='/edit-account' component={EditAccount} />
+        <Route path='/forgotPassword' component={forgotPassword}/>
       </Layout>
     );
   }
