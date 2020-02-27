@@ -3,9 +3,9 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import "./UserCreation.css";
 import logo from '../images/DefaultEvent.png';
-import { Row, Col, Grid } from 'react-bootstrap';
+import { Row, Col} from 'react-bootstrap';
 
-export class HappninEvent extends React.Component {
+export class HappninEvent extends Component {
     render() {
         const e = this.props;
         return (
@@ -17,7 +17,7 @@ export class HappninEvent extends React.Component {
                     </Col>
                     <Col xs={10} horizontal='right'>
                         <div class="card-body" className='happninevent'>
-                            <img src={e.avatar_url}/>
+                            <img src={e.avatar_url} alt = 'profile avatar'/>
                             <div className='eventinfo'>
                                 <h5 class="card-title">{e.name}</h5>
                                 <p class="card-text" >

@@ -1,23 +1,12 @@
 ﻿import React, { Component } from "react";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
-import { SingleDatePicker } from "react-dates";
 import "rc-time-picker/assets/index.css";
-import moment from "moment";
-import TimePicker from "rc-time-picker";
 import {Redirect} from "react-router-dom";
 
 import {
-  Form,
-  Button,
-  FormGroup,
-  FormControl,
-  ControlLabel
+  Form
 } from "react-bootstrap";
-const format = "h:mm a";
-const now = moment()
-  .hour(0)
-  .minute(0);
 
 export class SubmitEvent extends Component {
   static displayName = SubmitEvent.name;
@@ -34,7 +23,7 @@ export class SubmitEvent extends Component {
         eventTime: "2020-02-26T05:21:52.102Z",
         endTime: "2020-02-27T05:21:52.102Z",
         cost: 42.00,
-        ageRestriction: 1
+        ageRestriction: 0,
        // redirectToHome: false
       }
     };
@@ -94,7 +83,6 @@ export class SubmitEvent extends Component {
               class="form-control"
               name="fname"
               type="text"
-              name="name"
               placeholder="Title"
               value={this.state.event.name}
               onChange={this.handleInputChange}

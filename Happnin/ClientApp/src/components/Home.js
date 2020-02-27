@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from 'reactstrap';
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
+import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import { HappninEvent } from './HappninEvent';
 
@@ -36,9 +35,9 @@ export class Home extends Component {
             <td>
             <div class = 'homeImages' >
               <Carousel infinite autoPlay = {5000} animationSpeed={1000}>
-                <img class = 'images'src={'https://media.istockphoto.com/photos/monroe-street-bridge-in-spokane-wa-picture-id163641699'}/>
-                <img class = 'images'src={'https://media.istockphoto.com/photos/downtown-spokane-washington-skyline-and-the-spokane-river-picture-id1125710637'} />
-                <img class = 'images'src={'https://media.istockphoto.com/photos/clock-tower-at-riverfront-park-in-spokane-on-a-sunny-day-picture-id171367206'} />              
+                <img class = 'images'src={'https://media.istockphoto.com/photos/monroe-street-bridge-in-spokane-wa-picture-id163641699'} alt = 'slide1'/>
+                <img class = 'images'src={'https://media.istockphoto.com/photos/downtown-spokane-washington-skyline-and-the-spokane-river-picture-id1125710637'} alt = 'slide2' />
+                <img class = 'images'src={'https://media.istockphoto.com/photos/clock-tower-at-riverfront-park-in-spokane-on-a-sunny-day-picture-id171367206'} alt = 'slide3' />              
               </Carousel>
               </div>
             </td>
@@ -106,18 +105,14 @@ export class Home extends Component {
 
           </td>
         </table>
-
         <div class="submit">
         <h1 id="tabelLabel" >Events</h1>
         <p>Got these events from our server DAWG</p>
 
         {contents}
-        </div>
-
-                  
+        </div>    
       </div>
-
-      
+                  
     
     );
   }

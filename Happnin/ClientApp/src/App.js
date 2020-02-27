@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
-import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
@@ -8,7 +7,6 @@ import { FetchEventData } from './components/FetchEventData';
 import { FetchUserData } from './components/FetchUserData';
 import { FetchLocationData } from './components/FetchLocationData';
 import { Counter } from './components/Counter';
-import { Login } from './components/Login';
 import { UserAccount } from './components/UserAccount';
 import { UserCreation } from './components/UserCreation';
 import { SubmitEvent } from './components/SubmitEvent';

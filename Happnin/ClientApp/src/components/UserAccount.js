@@ -1,8 +1,7 @@
 ﻿import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./UserAccount.css";
-import { Button } from "reactstrap";
-import { NavLink, Link } from "react-router-dom";
+import {Link } from "react-router-dom";
 
 //need to figure out how to access user information from database and use those props in page
 
@@ -29,12 +28,12 @@ export class UserAccount extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <div className="col-3 border rounded white-div">
+          <div className="col-sm border rounded white-div">
             <div className="row text-center">
               <img
                 src="https://cdn4.iconfinder.com/data/icons/social-media-and-networking/480/02_social_medis_profile_female_placeholder_image_profile_female-512.png"
                 className="img-fluid mt-0"
-                alt="profile image"
+                alt="User Avatar"
               ></img>
               <h3 className="header mx-auto">
                 {this.state.user.firstName + " " + this.state.user.lastName}
