@@ -2,14 +2,31 @@ import React, { Component } from 'react';
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import { HappninEvent } from './HappninEvent';
+import { Map, GoogleApiWrapper } from 'google-maps-react';
+
+import GoogleMapReact from 'google-map-react';
+
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
+
 
 export class Home extends Component {
   static displayName = Home.name;
+  static defaultProps = {
+    center: {
+      lat: 47.65,
+      lng: -117
+    },
+    zoom: 11
+  };
+
 
   constructor(props) {
       super(props);
       this.state = { events: [], loading: true };
   }
+
+
 
   componentDidMount() {
       this.populateEventData();
@@ -105,6 +122,24 @@ export class Home extends Component {
 
           </td>
         </table>
+        <Map
+          google={this.props.google}
+          zoom={8}
+          initialCenter={{ lat: 47.444, lng: -122.176}}
+        />
+        <div style={{ height: '100vh', width: '100%' }}>
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: 'YOUR_KEY_HERE' }}
+          defaultCenter={this.props.center}
+          defaultZoom={this.props.zoom}
+        >
+          <AnyReactComponent
+            lat={59.955413}
+            lng={30.337844}
+            text="My Marker"
+          />
+        </GoogleMapReact>
+      </div>
         <div class="submit">
         <h1 id="tabelLabel" >Events</h1>
         <p>Got these events from our server DAWG</p>
@@ -125,4 +160,15 @@ export class Home extends Component {
     this.setState({ events: data, loading: false });
 }
 
+
+
+
 }
+
+export default Home;
+// export default GoogleApiWrapper({
+//   apiKey: 'YOUR_KEY_HERE'
+// })(Map);
+{/* <script async defer
+src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE&callback=initMap">
+</script> */}
