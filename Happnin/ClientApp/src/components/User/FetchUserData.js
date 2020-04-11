@@ -14,7 +14,7 @@ export class FetchUserData extends Component {
 
   static renderUsersTable(users) {
     return (
-      <table className="table table-striped" aria-labelledby="tabelLabel">
+      <table className="table table-striped" aria-labelledby="tableLabel">
         <thead>
           <tr>
             <th>User Name</th>
@@ -50,7 +50,7 @@ export class FetchUserData extends Component {
 
     return (
       <div className="card">
-        <h1 id="tabelLabel" className="header">
+        <h1 id="tableLabel" className="header">
           Users
         </h1>
         <p>Got these users from our server DAWG</p>

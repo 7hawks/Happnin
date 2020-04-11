@@ -14,7 +14,7 @@ export class FetchLocationData extends Component {
 
   static renderLocationsTable(Locations) {
     return (
-      <table className="table table-striped" aria-labelledby="tabelLabel">
+      <table className="table table-striped" aria-labelledby="tableLabel">
         <thead>
           <tr>
             <th>Address</th>
@@ -49,7 +49,7 @@ export class FetchLocationData extends Component {
 
     return (
       <div className="card">
-        <h1 id="tabelLabel" className="header">
+        <h1 id="tableLabel" className="header">
           Locations
         </h1>
         <p>Got these Locations from our server DAWG</p>

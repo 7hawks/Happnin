@@ -1,8 +1,8 @@
 ﻿import React, { Component } from "react";
 import { HappninEvent } from "./HappninEvent";
-import GoogleMapReact from "google-map-react";
+import { Map } from "../Map";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
 export class FetchEventData extends Component {
   static displayName = FetchEventData.name;
 
@@ -25,14 +25,6 @@ export class FetchEventData extends Component {
     );
   }
 
-  static defaultProps = {
-    center: {
-      lat: 47.491255,
-      lng: -117.582624
-    },
-    zoom: 11
-  };
-
   render() {
     let contents = this.state.loading ? (
       <p>
@@ -44,20 +36,10 @@ export class FetchEventData extends Component {
 
     return (
       <div>
-        <div style={{ height: "100vh", width: "100%" }}>
-          <GoogleMapReact
-            //add api key to the map so we can place events and such
-            defaultCenter={this.props.center}
-            defaultZoom={this.props.zoom}
-          >
-            <AnyReactComponent
-              lat={59.955413}
-              lng={30.337844}
-              text="My Marker"
-            />
-          </GoogleMapReact>
-        </div>
-        <h1 id="tabelLabel" className="header">
+
+        <Map/>
+
+        <h1 id="tableLabel" className="header">
           Events
         </h1>
         <p>Got these events from our server DAWG</p>
