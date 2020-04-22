@@ -4,6 +4,8 @@
 /* Uses blue for anchor/link color */
 /* Provide sufficient contrast against white background */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900&display=swap");
+
+@import url(https://unpkg.com/leaflet@1.6.0/dist/leaflet.css);
 a {
   color: #0366d6;
 }
@@ -83,7 +85,18 @@ label {
 #accountform {
   margin-bottom: 2em;
 }
-
+#filterName{
+  margin: auto;
+}
+#filterZip{
+  padding-left: 1.5em;
+}
+#filterCategory{
+  padding-right: 6em;
+}
+#filterDate{
+  padding-left: 4em;
+}
 html,
 body {
   overflow-x: hidden;

@@ -18,7 +18,7 @@ namespace Happnin.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-     //   private readonly IEmailSender _emailSender;
+        private readonly IEmailSender _emailSender;
 
         public EmailModel(
             UserManager<User> userManager,

@@ -23,7 +23,7 @@ export class UserCreation extends Component {
         lastName: "",
         locationId: 1,
         password: "",
-        email: ""
+        email: "",
       },
       passwordConfirm: "",
       loading: true,
@@ -42,12 +42,12 @@ export class UserCreation extends Component {
       isValidPassMax: true,
       isValidPassSpecial: false,
       passwordsMatch: false,
-      reCaptchaResponse: false
+      reCaptchaResponse: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     const target = event.target;
     const value = target.value;
     const name = target.name;
@@ -55,8 +55,8 @@ export class UserCreation extends Component {
     this.setState({
       user: {
         ...this.state.user,
-        [name]: value
-      }
+        [name]: value,
+      },
     });
     console.log(this.user);
   };
@@ -79,15 +79,37 @@ export class UserCreation extends Component {
       method: "POST",
       body: JSON.stringify(this.state.user),
       headers: {
-        "Content-Type": "application/json"
-      }
+        "Content-Type": "application/json",
+      },
     })
-      .then(res => res.json())
-      .then(response => console.log("Success: ", JSON.stringify(response)))
-      .then(error => console.error("error:", error));
+      .then((res) => res.json())
+      .then((response) => console.log("Success: ", JSON.stringify(response)))
+      .then((error) => console.error("error:", error));
     this.props.history.push("/pending-email");
   }
 
+  //these show or hide dropdowns if input is clicked on
+  showOrHideZip = () =>
+    this.setState((currentState) => ({ showZip: !currentState.showZip }));
+  showOrHideUser = () =>
+    this.setState((currentState) => ({ showUser: !currentState.showUser }));
+  showOrHidePassReq = () =>
+    this.setState((currentState) => ({
+      showPassReq: !currentState.showPassReq,
+    }));
+  showOrHideConfirmPass = () =>
+    this.setState((currentState) => ({
+      showConfirmReq: !currentState.showConfirmReq,
+    }));
+
+  //this makes sure that the zip code is valid, then add the valid or invalid classes accordingly
+  validateZip = (event) => {
+    const target = event.target;
+    const zipValue = target.value;
+    zipValue.length === 5
+      ? this.setState({ isValidZip: true })
+      : this.setState({ isValidZip: false });
+  };
   ////these show or hide dropdowns if input is clicked on
   //showOrHideZip = () =>
   //  this.setState(currentState => ({ showZip: !currentState.showZip }));
@@ -108,12 +130,11 @@ export class UserCreation extends Component {
   //    ? this.setState({ isValidZip: true })
   //    : this.setState({ isValidZip: false });
   //};
-
   //this makes sure the username is valid, then add the valid or invalid classes accordingly
-  validateUsername = event => {
+  validateUsername = (event) => {
     const target = event.target;
     const usernameValue = target.value;
-    var regAlpha = new RegExp("^[A-Za-z0-9]*$");
+    let regAlpha = new RegExp("^[A-Za-z0-9]*$");
     regAlpha.test(usernameValue) && usernameValue.length > 0
       ? this.setState({ isValidUserAlpha: true })
       : this.setState({ isValidUserAlpha: false });
@@ -126,36 +147,36 @@ export class UserCreation extends Component {
   };
 
   //for some reason handleInputChange isn't working for passwords, so this is used to set password
-  onPassChange = event => {
+  onPassChange = (event) => {
     this.setState({
       user: {
         ...this.state.user,
-        password: event.target.value
-      }
+        password: event.target.value,
+      },
     });
     this.handleInputChange(event);
   };
 
   //see function description above, same but for confirming password
-  onPassConfirmChange = event => {
+  onPassConfirmChange = (event) => {
     this.setState({
-      passwordConfirm: event.target.value
+      passwordConfirm: event.target.value,
     });
   };
 
   //makes sure the password is valid, then add the valid or invalid classes accordingly
-  validatePassword = event => {
+  validatePassword = (event) => {
     const target = event.target;
     const passValue = target.value;
-    var regLower = new RegExp("[a-z]");
+    let regLower = new RegExp("[a-z]");
     regLower.test(passValue)
       ? this.setState({ isValidPassLower: true })
       : this.setState({ isValidPassLower: false });
-    var regUpper = new RegExp("[A-Z]");
+    let regUpper = new RegExp("[A-Z]");
     regUpper.test(passValue)
       ? this.setState({ isValidPassUpper: true })
       : this.setState({ isValidPassUpper: false });
-    var regNum = new RegExp("[0-9]");
+    let regNum = new RegExp("[0-9]");
     regNum.test(passValue)
       ? this.setState({ isValidPassNum: true })
       : this.setState({ isValidPassNum: false });
@@ -165,7 +186,7 @@ export class UserCreation extends Component {
     passValue.length <= 30
       ? this.setState({ isValidPassMax: true })
       : this.setState({ isValidPassMax: false });
-    var regSpecial = new RegExp('[!@#$%^&*(),.?":{}|<>]');
+    let regSpecial = new RegExp('[!@#$%^&*(),.?":{}|<>]');
     regSpecial.test(passValue)
       ? this.setState({ isValidPassSpecial: true })
       : this.setState({ isValidPassSpecial: false });
@@ -184,10 +205,10 @@ export class UserCreation extends Component {
   };
 
   //for the recaptcha, makign sure that the user clicks on it before submitting
-  verifyCallback = response => {
+  verifyCallback = (response) => {
     console.log(response);
     this.setState({
-      reCaptchaResponse: response
+      reCaptchaResponse: response,
     });
   };
 

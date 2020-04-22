@@ -12,8 +12,8 @@ export class signIn extends Component {
         lastName: "getUser",
         locationId: 1,
         password: "",
-        email: "get@signon.com"
-      }
+        email: "get@signon.com",
+      },
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -22,7 +22,7 @@ export class signIn extends Component {
 
   componentDidMount() {}
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     event.preventDefault();
     const target = event.target;
     const value = target.value;
@@ -32,8 +32,8 @@ export class signIn extends Component {
     this.setState({
       user: {
         ...this.state.user,
-        [name]: value
-      }
+        [name]: value,
+      },
     });
     console.log(this.state);
   };
@@ -44,11 +44,11 @@ export class signIn extends Component {
     await fetch("api/User/SignOn", {
       method: "POST",
       body: JSON.stringify(this.state.user),
-      headers: { "Content-Type": "application/json" }
+      headers: { "Content-Type": "application/json" },
     })
-      .then(res => res.json())
-      .then(response => console.log("Success: ", JSON.stringify(response)))
-      .then(error => console.error("error:", error));
+      .then((res) => res.json())
+      .then((response) => console.log("Success: ", JSON.stringify(response)))
+      .then((error) => console.error("error:", error));
   }
 
   render() {
@@ -90,7 +90,7 @@ export class signIn extends Component {
                 </button>
               </div>
               <div>
-                <Link className="tertiaryText hoverColor" to="forgotPassword">
+                <Link className="tertiaryText hoverColor" to="ForgotPassword">
                   Forgot password?
                 </Link>
               </div>

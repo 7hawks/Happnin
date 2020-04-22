@@ -1,4 +1,4 @@
-﻿import React, { Component } from 'react';
+﻿import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
 import "../../styles/UserCreation.css";
 import logo from '../../images/happninHLogoThumb.png';
@@ -39,3 +39,4 @@ export class HappninEvent extends Component {
         )
     }
 }
+

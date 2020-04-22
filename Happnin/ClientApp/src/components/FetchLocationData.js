@@ -25,7 +25,7 @@ export class FetchLocationData extends Component {
           </tr>
         </thead>
         <tbody>
-          {Locations.map(l => (
+          {Locations.map((l) => (
             <tr key={l.address}>
               <td>{l.address}</td>
               <td>{l.city}</td>

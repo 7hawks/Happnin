@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router";
 import { Layout } from "./components/Layout";
-import { Location } from "./components/Location";
 import { Home } from "./components/Home";
 import { About } from "./components/About";
 import { Terms } from "./components/Terms";
@@ -10,7 +9,7 @@ import { FetchEventData } from "./components/Event/FetchEventData";
 import { FetchUserData } from "./components/User/FetchUserData";
 import { FetchLocationData } from "./components/FetchLocationData";
 import { SubmitEvent } from "./components/Event/SubmitEvent";
-import { browseEvents } from "./components/Event/browseEvents";
+import { BrowseEvents } from "./components/Event/BrowseEvents";
 import ApiAuthorizationRoutes from "./components/api-authorization/ApiAuthorizationRoutes";
 import { ApplicationPaths } from "./components/api-authorization/ApiAuthorizationConstants";
 import { ContactUs } from "./components/ContactUs";
@@ -22,7 +21,7 @@ export default class App extends Component {
   static displayName = App.name;
 
   state = {
-    eventinfoarray: []
+    eventinfoarray: [],
   };
 
   render() {
@@ -30,8 +29,7 @@ export default class App extends Component {
       <Layout>
         <Route exact path="/" component={Home} />
         <Route path="/submit-event" component={SubmitEvent} />
-        <Route path="/browseEvents" component={browseEvents} />
-        <Route path="/submit-location" component={Location} />
+        <Route path="/BrowseEvents" component={BrowseEvents} />
         <Route path="/fetch-event-data" component={FetchEventData} />
         <Route path="/fetch-user-data" component={FetchUserData} />
         <Route path="/fetch-location-data" component={FetchLocationData} />

@@ -5,6 +5,9 @@ import { Footer } from "./Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
+import fireworks from "../images/fireworks.jpeg";
+import crowd from "../images/crowd.jpg";
+import microphone from "../images/microphone.jpg";
 import nightLife from '../images/samvidh-ramanathan-9PaGKXIPUHQ-unsplash.jpg';
 
 export class Layout extends Component {
@@ -27,21 +30,15 @@ export class Layout extends Component {
             />
             <img
               className="item w-100"
-              src={"https://images5.alphacoders.com/349/thumb-1920-349660.jpg"}
+              src={crowd}
               alt="A concert with people raising their hands up"
             />
             <img
               className="item w-100"
-              src={
-                "https://seattle.cbslocal.com/wp-content/uploads/sites/15909838/2016/05/thinkstockphotos-518756776.jpg?w=1024&h=576&crop=1"
-              }
+              src={microphone}
               alt="A comedy club with a microphone in focus"
             />
-            <img
-              className="item w-100"
-              src={"https://cdn.wallpapersafari.com/75/78/Hzj0JM.jpeg"}
-              alt="Fireworks"
-            />
+            <img className="item w-100" src={fireworks} alt="Fireworks" />
           </Carousel>
         </div>
         <NavMenu />

@@ -1,16 +1,15 @@
 import React, { Component } from "react";
-import "../styles/forgotPassword.css";
-import { withRouter } from "react-router-dom";
+import "../styles/ForgotPassword.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //TODO: actually send an email, right now this submit goes nowhere
 
-export class forgotPassword extends Component {
+export class ForgotPassword extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
-      showMessage: false
+      showMessage: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -19,10 +18,10 @@ export class forgotPassword extends Component {
     this.props.history.push("/reset-email-sent");
   }
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     event.preventDefault();
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 

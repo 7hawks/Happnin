@@ -17,7 +17,7 @@ export class Home extends Component {
   static renderEventsTable(events) {
     return (
       <div>
-        {events.map(eventinfo => (
+        {events.map((eventinfo) => (
           <HappninEvent key={eventinfo.id} {...eventinfo} />
         ))}
       </div>
@@ -67,7 +67,6 @@ export class Home extends Component {
             Events
           </h1>
           <p>Got these events from our server DAWG</p>
-
           {contents}
         </div>
       </div>
