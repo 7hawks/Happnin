@@ -13,11 +13,16 @@ using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.IO;
+using System.Text.Json;
 
 namespace Happnin
 {
     public class Startup
     {
+        private string _mapApiKey = null;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,6 +32,9 @@ namespace Happnin
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            _mapApiKey = Configuration["MapApiKey"];
+
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -119,5 +127,18 @@ namespace Happnin
                 }
             });
         }
+
+        private void writeFile(String data)
+        {
+           
+
+            //using (StreamWriter file = File.CreateText(@"./path.txt"))
+            //{
+            //    JsonSerializer serializer = new JsonSerializer();
+            //    //serialize object directly into file stream
+            //    serializer.Serialize(file, data);
+            //}
+        }
+
     }
 }

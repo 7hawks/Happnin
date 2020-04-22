@@ -5,7 +5,6 @@ import "rc-time-picker/assets/index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form } from "react-bootstrap";
 import authService from '../api-authorization/AuthorizeService';
-import DateTimePicker from 'react-datetime-picker';
 import { Location } from "../Location.js";
 
 
@@ -167,7 +166,6 @@ export class SubmitEvent extends Component {
           <div class="form-group"> 
               <label for="costId">Cost:</label>
               <input 
-
                 type="number" 
                 name="cost"
                 value={this.state.event.cost}

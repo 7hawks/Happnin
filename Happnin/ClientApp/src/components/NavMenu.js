@@ -40,7 +40,7 @@ export class NavMenu extends Component {
             <NavbarBrand tag={Link} to="/" className="logo">
               <img
                 id="logo"
-                class="d-inline-block mr-1"
+                className="d-inline-block mr-1"
                 alt="Logo"
                 src={logo}
               />

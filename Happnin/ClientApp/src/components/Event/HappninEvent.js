@@ -14,17 +14,17 @@ export class HappninEvent extends Component {
 
         return (
            
-            <div class="card" >
+            <div className="card" >
                 <Row around="xs">
                     <Col xs={2} >
-                        <Card.Img className="eventImage" variant="left" src={logo} rounded style={{padding: 5}}/>
+                        <Card.Img className="eventImage" variant="left" src={logo}  style={{padding: 5}}/>
                     </Col>
                     <Col xs={10} horizontal='right'>
-                        <div class="card-body" className='happninevent'>
+                        <div className="card-body" className='happninevent'>
                             <div className='eventinfo'>
-                                <h5 class="card-title">{e.name}</h5>
-                                <p class="card-text" >
-                                    <p>{e.description}</p>
+                                <h5 className="card-title">{e.name}</h5>
+                                <p className="card-text" >
+                                    <span>{e.description}</span>
                                     Cost: $ <b>{e.cost}</b> &ensp;
                                     Age Restriction: <b>{e.ageRestriction}</b> <br/> <br/> 
                                     Category: <b>{e.categoryId}</b> <br/>

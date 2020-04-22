@@ -2,7 +2,6 @@
 import { HappninEvent } from "./HappninEvent";
 import { Map } from "../Map";
 
-
 export class FetchEventData extends Component {
   static displayName = FetchEventData.name;
 
@@ -15,7 +14,7 @@ export class FetchEventData extends Component {
     this.populateEventData();
   }
 
-  static renderEventsTable(events) {
+  static renderEvents(events) {
     return (
       <div>
         {events.map(eventinfo => (
@@ -23,7 +22,17 @@ export class FetchEventData extends Component {
         ))}
       </div>
     );
-  }
+    }
+
+    static renderMapInfo(events) {
+        return (
+            <div>
+                {events.map(eventinfo => (
+                    <Map key={eventinfo.id} {...eventinfo} />
+                ))}
+            </div>
+        );
+    }
 
   render() {
     let contents = this.state.loading ? (
@@ -31,13 +40,13 @@ export class FetchEventData extends Component {
         <em>Loading...</em>
       </p>
     ) : (
-      FetchEventData.renderEventsTable(this.state.events)
-    );
+            FetchEventData.renderEvents(this.state.events) 
+     );
 
     return (
       <div>
-
-        <Map/>
+        
+        <Map events={JSON.stringify(this.state.events)} />
 
         <h1 id="tableLabel" className="header">
           Events
