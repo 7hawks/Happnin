@@ -39,13 +39,31 @@ namespace Happnin.Data
             set => _country = value ?? throw new ArgumentNullException(nameof(Country));
         }
 
-        public Location(string address, string city, string state, string country, string zipCode)
+        private string _lat;
+
+        public string Lat 
+        {
+            get => _lat;
+            set => _lat = value ?? throw new ArgumentNullException(nameof(Lat));
+        }
+
+        private string _lng;
+
+        public string Lng
+        {
+            get => _lng;
+            set => _lng = value ?? throw new ArgumentNullException(nameof(Lng));
+        }
+
+        public Location(string address, string city, string state, string country, string zipCode, string lat, string lng)
         {
             Address = address;
             City = city;
             State = state;
             Country = country;
             ZipCode = zipCode;
+            Lat = lat;
+            Lng = lng;
         }
 
     }

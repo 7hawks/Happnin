@@ -7,5 +7,7 @@
         public string State { get; set; }
         public string Country { get; set; }
         public string ZipCode { get; set; }
+        public string Lat { get; set; }
+        public string Lng { get; set; }
     }
 }

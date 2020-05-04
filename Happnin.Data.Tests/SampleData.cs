@@ -23,13 +23,15 @@ namespace Happnin.Data.Tests
         public const string State = "WA";
         public const string Country = "United States of America";
         public const string ZipCode = "99004";
+        public const string Lat = "47.658779";
+        public const string Lng = "-117.426048";
 
-        public static Location Location1234Spokane() => new Location(Street, City, State, Country, ZipCode);
+        public static Location Location1234Spokane() => new Location(Street, City, State, Country, ZipCode, Lat, Lng);
 
         public const string DifferentStreet = "3456 lane";
         public const string DifferentCity = "Spokane";
 
-        public static Location Location3456Spokane() => new Location(DifferentStreet, DifferentCity, State, Country, ZipCode);
+        public static Location Location3456Spokane() => new Location(DifferentStreet, DifferentCity, State, Country, ZipCode, Lat, Lng);
 
         public const string Party = "Party";
         public const string Description = "a party";

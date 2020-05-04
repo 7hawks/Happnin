@@ -76,11 +76,11 @@ export class Home extends Component {
   async populateEventData() {
     const response = await fetch("api/Event");
     console.log(response);
-    //temp
+   
     const time = await fetch("api/Event/eventTime");
     console.log(time);
-    const data = await response.json();
-    console.log("Got Data", data);
-    this.setState({ events: data, loading: false });
+  //  const data = await response.json();
+  //  console.log("Got Data", data);
+  //  this.setState({ events: data, loading: false });
   }
 }

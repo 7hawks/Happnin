@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FetchEventData } from "./FetchEventData";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+/*import DatePicker from "react-datepicker"; */
+/* import "react-datepicker/dist/react-datepicker.css"; */
 
 export class BrowseEvents extends Component {
   constructor(props) {
@@ -78,10 +78,10 @@ export class BrowseEvents extends Component {
             <label className="subHeader">
               &nbsp;&nbsp;Events by date:&nbsp;{this.state.eventSearch}
             </label>
-            <DatePicker
+                    {/*   <DatePicker
             selected={this.state.startDate}
             onChange={this.handleDateChange}
-            />
+            /> */}
           </div>
 
         </div>

@@ -18,7 +18,17 @@ namespace Happnin.Data
             get => _description; 
             set => _description = value ?? throw new ArgumentNullException(nameof(Description));
         }
-       
+
+        public int? ImageId { get; set; }
+
+        private Image _image;
+        public Image Image
+        {
+            get => _image;
+            set => _image = value ?? throw new ArgumentNullException(nameof(Image));
+        }
+
+
         public int LocationId { get; set; }
         private Location _location;
         public Location Location
@@ -75,7 +85,6 @@ namespace Happnin.Data
             Cost = cost;
             AgeRestriction = ageRestriction;
         }
-
 
         public bool AddAttendee(User attendee)
         {
